@@ -31,8 +31,9 @@
 	top: 50%;
 	left: 50%;
 
-	min-width: 522px;
-	min-height: 581px;
+	width: 95%;
+	max-width: 450px;
+	max-height: 610px;
 
 	padding: 40px;
 	border-radius: 4px;
@@ -42,6 +43,15 @@
 	transition-property: transform, opacity;
 	transition-duration: 250ms;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+	@media screen and (min-width: 1200px) {
+		max-width: 528px;
+		min-height: 580px;
+	}
+
+
 }
 
 
@@ -51,6 +61,7 @@
 	display: flex;
 	flex-direction: column;
 	/* position: fixed; */
+
 
 }
 
@@ -155,8 +166,13 @@
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 30px;
-	margin-left: 36px;
+	margin-left: 0;
 	flex-direction: column;
+
+
+	@media screen and (min-width: 1200px) {
+		margin-left: 28px;
+	}
 }
 
 /* делает невидимым дефолтный квадратик чекбокса */
@@ -175,15 +191,34 @@
 }
 
 
+.checkbox__text {
+	margin-left: 16px;
+	font-size: 12px;
+
+
+	@media screen and (min-width: 1200px) {
+		margin-left: 2px;
+		font-size: 14px;
+	}
+}
+
+
+
 .agreement-link {
 	color: #2196F3;
+
+	font-size: 12px;
+
+	@media screen and (min-width: 1200px) {
+		font-size: 14px;
+	}
 }
 
 
 .checkbox__tick-icon {
 	position: absolute;
-	left: -20px;
-	top: 4px;
+	left: 0;
+	top: 2px;
 
 	width: 16px;
 	height: 15px;
@@ -201,6 +236,12 @@
 		border-color: $accent;
 	}
 
+	@media screen and (min-width: 1200px) {
+		top: 4px;
+		left: -20px;
+
+	}
+
 }
 
 
@@ -215,6 +256,7 @@
 	border-radius: 4px;
 	/* display: block; */
 	cursor: pointer;
+	box-shadow: 0px 4px 4px 0px #00000026;
 
 	transition-property: background-color;
 	transition-duration: 250ms;
