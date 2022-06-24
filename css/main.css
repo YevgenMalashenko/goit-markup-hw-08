@@ -55,6 +55,26 @@
   overflow: hidden;
 }
 
+.section {
+  outline: 6px solid red;
+  /* background-color: rgba(255, 182, 193, 0.4); */
+}
+
+.container {
+  outline: 3px solid green;
+  /* background-color: rgba(152, 251, 152, 0.5); */
+}
+
+ul {
+  outline: 2px dashed blue;
+  /* background-color: rgba(63, 74, 226, 0.5); */
+}
+
+li {
+  outline: 2px dotted Fuchsia;
+  /* background-color: rgba(255, 0, 255, 0.5); */
+}
+
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -320,6 +340,7 @@ summary {
 
 .page-header__container {
   border-bottom: 1px solid #ECECEC;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .page-header__container {
@@ -343,7 +364,7 @@ summary {
   }
 }
 .nav__logo {
-  padding: 14px 0;
+  padding: 16px 0;
   color: #212121;
   font-size: 24px;
 }
@@ -360,8 +381,21 @@ summary {
     font-size: 26px;
   }
 }
-.nav__list {
-  display: none;
+@media screen and (max-width: 768px) {
+  .nav__list {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 796px;
+    padding: 48px 40px;
+    z-index: 1;
+    background-color: rgb(52, 209, 188);
+  }
+  .nav__list.is-open {
+    display: block;
+  }
 }
 @media screen and (min-width: 768px) {
   .nav__list {
@@ -373,10 +407,34 @@ summary {
             align-items: center;
   }
 }
+@media screen and (max-width: 768px) {
+  .nav__item:not(:last-child) {
+    padding-bottom: 32px;
+  }
+}
 @media screen and (min-width: 768px) {
   .nav__item:not(:last-child) {
     margin-right: 50px;
   }
+}
+.nav__link {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: #212121;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav__link--active {
+  color: #2196F3;
+}
+.nav__link:hover, .nav__link:focus {
+  color: #2196F3;
 }
 @media screen and (min-width: 768px) {
   .nav__link {
@@ -388,16 +446,55 @@ summary {
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.02em;
-    -webkit-transition-property: color;
-    transition-property: color;
+  }
+}
+
+.nav__button {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .nav__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    cursor: pointer;
+    -webkit-transition-property: fill;
+    transition-property: fill;
     -webkit-transition-duration: 250ms;
             transition-duration: 250ms;
     -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .nav__link:hover, .nav__link:focus {
-    color: #2196F3;
+  .nav__button:hover, .nav__button:focus {
+    fill: #2196F3;
   }
+}
+
+.close-icon {
+  display: none;
+}
+
+.nav__button.is-open .close-icon {
+  display: block;
+}
+
+.nav__button.is-open .menu-icon {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -430,8 +527,21 @@ summary {
   }
 }
 
-.page-header__contacts {
-  display: none;
+@media screen and (max-width: 768px) {
+  .page-header__contacts {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 796px;
+    padding: 48px 40px;
+    z-index: 1;
+    background-color: rgb(52, 209, 188);
+  }
+  .page-header__contacts.is-open {
+    display: block;
+  }
 }
 @media screen and (min-width: 768px) {
   .page-header__contacts {
@@ -1243,11 +1353,12 @@ summary {
 
 .modal {
   position: fixed;
+  overflow-y: overlay;
   top: 50%;
   left: 50%;
   width: 95%;
   max-width: 450px;
-  max-height: 610px;
+  max-height: 620px;
   padding: 40px;
   border-radius: 4px;
   background-color: #fff;
@@ -1267,7 +1378,7 @@ summary {
 @media screen and (min-width: 1200px) {
   .modal {
     max-width: 528px;
-    min-height: 580px;
+    min-height: 590px;
   }
 }
 
