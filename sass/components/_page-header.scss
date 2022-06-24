@@ -6,6 +6,8 @@
 	border-bottom: 1px solid #ECECEC;
 	position: relative;
 
+	// background-color: green;
+
 	@media screen and (min-width: 768px) {
 		display: flex;
 		align-items: center;
@@ -157,6 +159,7 @@
 
 		z-index: 2;
 
+
 		cursor: pointer;
 
 		transition-property: fill;
@@ -197,7 +200,7 @@
 .mob-menu {
 	display: none;
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767.98px) {
 		display: none;
 
 		position: absolute;
@@ -205,7 +208,12 @@
 		left: 0;
 		width: 100%;
 		max-width: 480px;
-		height: 796px;
+		height: 100%;
+		min-height: 796px;
+
+		overflow-y: scroll;
+
+
 
 		padding: 48px 40px;
 
@@ -300,6 +308,7 @@
 
 		.mob-socials {
 			display: flex;
+			flex-wrap: wrap;
 
 		}
 
