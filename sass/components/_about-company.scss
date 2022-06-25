@@ -8,27 +8,25 @@
 		flex-wrap: wrap;
 	}
 
-
-
 }
 
 .feature-item {
 
 	width: 100%;
-
-
-	&:not(:last-child) {
-		margin-bottom: 30px;
-	}
-
 	text-align: center;
 
-	@media screen and (min-width: 768px) {
-		width: calc((100% - 30px) / 2);
+	@media screen and (max-width: 767.5px) {
 		&:not(:last-child) {
-			margin-bottom: 0;
-
+		margin-bottom: 30px;
 		}
+	}
+
+
+
+
+	@media screen and (min-width: 768px) and (max-width: 1199.5px) {
+		width: calc((100% - 30px) / 2);
+
 
 		&:nth-child(2n + 1) {
 			margin-right: 30px;
@@ -43,14 +41,6 @@
 	@media screen and (min-width: 1200px) {
 
 		width: calc((100% - 90px) / 4);
-
-		&:nth-child(2n + 1) {
-			margin-right: 0px;
-		}
-
-		&:nth-child(-n + 2) {
-			margin-bottom: 0px;
-		}
 
 		&:not(:last-child) {
 			margin-right: 30px;
@@ -88,9 +78,6 @@
 		color: $title-text-color;
 
 	}
-
-
-
 
 }
 
