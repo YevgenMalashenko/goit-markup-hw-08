@@ -102,17 +102,16 @@
 	&__title {
 		margin-bottom: 30px;
 
-		font-family: Roboto;
 		font-size: 26px;
 		font-weight: 900;
 		line-height: 1.61;
 		letter-spacing: 0.06em;
+		text-transform: uppercase;
 		text-align: center;
 
 		color: #FFFFFF;
 
 		@media screen and (min-width: 1200px) {
-			font-family: Roboto;
 			font-size: 44px;
 			font-weight: 900;
 			line-height: 1.36;

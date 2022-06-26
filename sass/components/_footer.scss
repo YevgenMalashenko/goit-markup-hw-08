@@ -51,8 +51,11 @@
 
 
 .footer-contacts {
-	margin-bottom: 60px;
-	// min-width: 231px;
+
+	@media screen and (max-width: 1199.5px) {
+		margin-bottom: 60px;
+	}
+
 
 	&__physical-address,
 	&__tel,
@@ -113,10 +116,9 @@
 
 
 .join {
-	margin-bottom: 60px;
 
-	@media screen and (min-width: 768px) {
-		margin-bottom: 0;
+	@media screen and (max-width: 767.5px) {
+		margin-bottom: 60px;
 	}
 
 	@media screen and (min-width: 1200px) {
@@ -134,6 +136,10 @@
 	// text-align: left;
 	text-transform: uppercase;
 	color: #FFFFFF;
+
+	@media screen and (min-width: 1200px) {
+		text-align: left;
+	}
 }
 
 .join-socials {
